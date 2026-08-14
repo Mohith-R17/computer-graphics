@@ -1,41 +1,20 @@
 # Computer Graphics using OpenGL (Python)
 
-This repository contains implementations of Computer Graphics algorithms using Python and OpenGL.
+This repository contains implementations of fundamental Computer Graphics algorithms using Python and OpenGL.
 
 ---
 
-## 1. Bresenham Line Algorithm
+## Algorithms Implemented
 
-### Output
+### 1. Bresenham Line Drawing Algorithm
+
+The Bresenham Line Drawing Algorithm is used to generate a straight line on a raster display using efficient integer arithmetic.
+
+#### Output
 
 ![Bresenham Line](bresenham_line/bresenham_line.png)
 
----
-
-## 2. Bresenham Circle Algorithm
-
-### Output
-
-![Bresenham Circle](bresenham_circle/bresenham_circle.png)
-
----
-
-## Requirements
-
-```bash
-pip install -r requirements.txt
-```
-
-## Run
-
-### Bresenham Line
+#### Run
 
 ```bash
 python bresenham_line/bresenham_line.py
-```
-
-### Bresenham Circle
-
-```bash
-python bresenham_circle/bresenham_circle.py
-```
