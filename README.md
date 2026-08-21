@@ -129,7 +129,7 @@ openGL/
 ## Algorithms
 
 | No. | Algorithm | Category |
-|-----|-----------|----------|
+|---|---|---|
 | 1 | Bresenham Line | Line Drawing |
 | 2 | Bresenham Circle | Circle Drawing |
 | 3 | DDA | Line Drawing |
