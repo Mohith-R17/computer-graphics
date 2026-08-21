@@ -60,6 +60,20 @@ python midpoint_circle/midpoint_circle.py
 
 ---
 
+## 5. 2D Transformations
+
+### Output
+
+![2D Transformations](transformations/transformations.png)
+
+### Run
+
+```bash
+python transformations/transformations.py
+```
+
+---
+
 ## Requirements
 
 Install the required packages using:
@@ -100,6 +114,10 @@ openGL/
 │   ├── midpoint_circle.py
 │   └── midpoint_circle.png
 │
+├── transformations/
+│   ├── transformations.py
+│   └── transformations.png
+│
 ├── main.py
 ├── README.md
 ├── requirements.txt
@@ -111,11 +129,12 @@ openGL/
 ## Algorithms
 
 | No. | Algorithm | Category |
-|---|---|---|
+|-----|-----------|----------|
 | 1 | Bresenham Line | Line Drawing |
 | 2 | Bresenham Circle | Circle Drawing |
 | 3 | DDA | Line Drawing |
 | 4 | Midpoint Circle | Circle Drawing |
+| 5 | 2D Transformations (Translation, Scaling, Rotation, Reflection) | Transformation |
 
 ---
 
@@ -136,5 +155,5 @@ openGL/
 
 **Mohith R**
 
-Computer Science Engineering  
+Computer Science Engineering 
 RV University
