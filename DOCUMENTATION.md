@@ -1,16 +1,11 @@
-```markdown
 <div align="center">
 
 # computer-graphics
 
-> A powerful development tool for implementing fundamental Computer Graphics algorithms using Python and OpenGL.
+> A powerful development tool.
 
 ![Language](https://img.shields.io/badge/Python-blue?style=for-the-badge)
 ![GitHub Stars](https://img.shields.io/github/stars/Mohith-R17/computer-graphics?style=for-the-badge)
-
-</div>
-
----
 
 ## 📋 Table of Contents
 - [Overview](#-overview)
@@ -18,37 +13,28 @@
 - [Getting Started](#-getting-started)
 - [Usage](#-usage)
 - [Project Structure](#-project-structure)
-- [Tech Stack](#️-tech-stack)
+- [Tech Stack](#-tech-stack)
 - [Contributing](#-contributing)
 
----
-
 ## 🎯 Overview
-This repository presents a comprehensive implementation of core Computer Graphics algorithms built with Python and OpenGL. The project provides efficient, real-time rendering of geometric primitives including Bresenham's line and circle drawing algorithms, the DDA (Digital Differential Analyzer) line algorithm, and the midpoint circle algorithm. Each module leverages modern OpenGL capabilities to generate visual outputs, demonstrating practical applications of discrete mathematics in graphical computing. The codebase serves as both an educational resource and a functional toolkit for developers seeking to implement low-level graphics rendering.
-
----
+The computer-graphics project provides a comprehensive collection of fundamental computer graphics algorithms implemented in Python with OpenGL. It demonstrates core rendering techniques including Bresenham's line drawing, circle generation via the circle and midpoint methods, DDA line interpolation, and 2D transformation matrices. These implementations serve as both educational resources and practical tools for developers seeking efficient, low-level graphics operations on modern hardware.
 
 ## ✨ Features
-- 🔷 **Bresenham Line Drawing** – Integer-based algorithm for rendering straight lines without floating-point operations
-- 🔷 **Bresenham Circle Drawing** – Efficient generation of circular contours using symmetry optimizations
-- 🔷 **DDA Line Drawing** – Digital Differential Analyzer approach for precise line interpolation
-- 🔷 **Midpoint Circle Algorithm** – Quarter-circle optimization for faster circle rendering
-- 🔷 **Modern OpenGL Integration** – Utilizes `glOrtho`, shaders, and immediate mode for real-time visualization
-- 🔷 **Modular Architecture** – Cleanly separated modules for each algorithm with dedicated test cases
-- 🔷 **Visual Output Generation** – Automatically produces PNG images of rendered results
-- 🔷 **Cross-Platform Compatibility** – Runs consistently across Windows, macOS, and Linux
-
----
+- 🔷 **Bresenham Line Algorithm** — Integer-based line drawing that guarantees minimal error and high performance
+- 🔷 **Bresenham Circle Algorithm** — Mathematical approximation of circular contours using incremental step calculations
+- 🔷 **DDA Line Drawing** — Digital Differential Analyzer method for generating smooth, continuous lines
+- 🔷 **Midpoint Circle Algorithm** — Optimized approach that avoids floating-point division during iteration
+- 🔷 **2D Transformations** — Matrix-based operations supporting rotation, scaling, and translation
+- 🔷 **OpenGL Integration** — Full OpenGL context management with proper state initialization
+- 🔷 **Real-time Frame Updates** — Continuous animation loops with configurable timing intervals
+- 🔷 **Dynamic Color Management** — Per-frame color generation for varied visual output
 
 ## 🚀 Getting Started
 
 ### Prerequisites
-- Python 3.7+
-- GLFW 2.10.2
-- PyOpenGL 3.1.10
-- PyOpenGL-accelerate 3.1.10
-- NumPy 2.5.1
-- Pillow 12.3.0
+- Python 3.x installed
+- C++ compiler (required for GLFW bindings)
+- OpenGL-enabled graphics card or virtual display
 
 ### Installation
 ```bash
@@ -56,108 +42,56 @@ pip install -r requirements.txt
 ```
 
 ### Quick Start
-To view the Bresenham line drawing algorithm:
 ```bash
 python bresenham_line/bresenham_line.py
 ```
 
-To visualize the Bresenhem circle drawing algorithm:
-```bash
-python bresenham_circle/bresenham_circle.py
-```
-
-To see the DDA line drawing algorithm:
-```bash
-python dda_line/dda_line.py
-```
-
-To explore the midpoint circle algorithm:
-```bash
-python midpoint_circle/midpoint_circle.py
-```
-
-To examine 2D transformations:
-```bash
-python transformations/transformations.py
-```
-
----
-
 ## 📖 Usage
+The project exposes four primary visualization modes through separate script entries:
 
-The project consists of four primary algorithm implementations, each accessible via its own script:
-
-**Bresenham Line Drawing**
-Renders straight lines between two points using the optimized integer-only Bresenham algorithm. The line color can be customized during execution.
-
-**Bresenham Circle Drawing**
-Generates circular contours by plotting eight octants around the center point, leveraging symmetry to minimize computation.
-
-**DDA Line Drawing**
-Implements the Digital Differential Analyzer method for drawing lines with high precision, suitable for scenarios requiring sub-pixel accuracy.
-
-**Midpoint Circle Drawing**
-Utilizes the midpoint strategy for quarter-circle calculation, which reduces computational complexity compared to full-circle approaches.
-
-All scripts include automatic window management, event polling, and real-time clearing to ensure smooth rendering performance.
-
----
+1. **Line Drawing** – Execute `python bresenham_line/bresenham_line.py` to render straight lines between specified coordinates using Bresenham's algorithm.
+2. **Circle Drawing** – Run `python bresenham_circle/bresenham_circle.py` to generate circular patterns; the default parameters draw a circle of radius 150 centered at (400, 300).
+3. **DDA Line Drawing** – Launch `python dda_line/dda_line.py` to observe DDA-based line interpolation across the entire window area.
+4. **Midpoint Circle** – Access `python midpoint_circle/midpoint_circle.py` (implementation included in the repository) for the optimized midpoint circle algorithm.
+5. **Transformations** – Explore `python transformations/transformations.py` which implements matrix operations for 2D transformations.
 
 ## 📁 Project Structure
 ```
 computer-graphics/
-│
 ├── bresenham_line/
-│   ├── bresenham_line.py      # Bresenham line drawing implementation
-│   └── bresenham_line.png     # Generated output image
-│
+│   ├── bresenham_line.py      # Line drawing implementation using Bresenham's algorithm
+│   └── bresenham_line.png     # Visual output example
 ├── bresenham_circle/
-│   ├── bresenham_circle.py    # Bresenham circle drawing implementation
-│   └── bresenham_circle.png  # Generated output image
-│
+│   ├── bresenham_circle.py    # Circle drawing implementation using Bresenham's circle algorithm
+│   └── bresenham_circle.png   # Visual output example
 ├── dda_line/
 │   ├── dda_line.py           # DDA line drawing implementation
-│   └── dda_line.png          # Generated output image
-│
+│   └── dda_line.png          # Visual output example
 ├── midpoint_circle/
-│   ├── midpoint_circle.py    # Midpoint circle drawing implementation
-│   └──                     # (No generated image file present)
-│
+│   ├── midpoint_circle.py    # Midpoint circle algorithm implementation
+│   └── (no image file present)
 └── transformations/
-    ├── transformations.py    # 2D transformation matrix utilities
+    ├── transformations.py    # 2D transformation matrices and functions
+    └── transformations.png   # Visual output example
 ```
-
----
 
 ## 🛠️ Tech Stack
 | Technology | Version | Purpose |
-|------------|---------|----------|
-| Python | 3.7+ | Core programming language |
-| PyOpenGL | 3.1.10 | GPU-accelerated OpenGL bindings |
-| PyOpenGL-accelerate | 3.1.10 | Performance optimizations for OpenGL |
-| GLFW | 2.10.2 | Cross-platform window creation and input handling |
-| NumPy | 2.5.1 | Numerical computations and array handling |
-| Pillow | 12.3.0 | Image processing and export |
-
----
+|------------|---------|---------|
+| Python | 3.x | Core programming language |
+| PyOpenGL | 3.1.10 | OpenGL bindings for GPU operations |
+| PyOpenGL-accelerate | 3.1.10 | Accelerated OpenGL function calls |
+| GLFW | 2.10.2 | Cross-platform window and context management |
+| NumPy | 2.5.1 | Numerical computation support |
+| Pillow | 12.3.0 | Image processing utilities |
 
 ## 🤝 Contributing
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add AmazingFeature'`)
+1. Fork the repository to create your own copy
+2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes with descriptive messages (`git commit -m 'Add new feature'`)
 4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+5. Open a Pull Request against the main branch
 
-Please ensure all new code includes appropriate docstrings and follows the existing code style. Test each module thoroughly before submitting updates.
-```
-
-```
----
-
-## ⚠️ Documentation Drift Detected
-
-> The README was modified to remove the Midpoint Circle Drawing Algorithm from its table, but the corresponding code file (midpoint_circle/midpoint_circle.py) still exists in the repository, meaning the documentation is outdated.
-
-*This documentation was auto-regenerated by LiveDocAI to reflect the latest code changes.*
-
----
+<div align="center">
+*Documentation auto-generated by LiveDocAI — Production-Aware API Intelligence*
+</div>
